@@ -47,8 +47,7 @@ describe "Items Endpoint" do
 
     it "updates an item" do
       item = create(:item)
-      post "/api/v1/items", params: {name: "item2", description: "new item", image_url: "new_url"}
-
+      post "/api/v1/items", params: {item: {name: "item2", description: "new item", image_url: "new_url"}}
       expect(response.status).to eq(201)
 
       parsed = JSON.parse(response.body)
