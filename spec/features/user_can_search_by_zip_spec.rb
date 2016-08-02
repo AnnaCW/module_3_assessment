@@ -8,7 +8,7 @@ feature "it searches stores by zip" do
 
       fill_in "Search", with: "80202"
       click_on "Search"
-
+    
       expect(current_path).to eq("/search")
       expect(page).to have_content("17 Total Stores")
       expect(page).to have_content("Showing 15 Results")
@@ -17,7 +17,7 @@ feature "it searches stores by zip" do
       expect(page).to have_content("Distance: 3.25")
       expect(page).to have_content("Phone: 303-270-9189")
       expect(page).to have_content("Store Type: Mobile")
-      
+
     end
   end
 end
