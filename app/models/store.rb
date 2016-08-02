@@ -17,7 +17,7 @@ class Store
 
   def self.find(id)
     raw_store = service.get_store(id)
-    OpenStruct.new(raw_store)
+    OpenStruct.new(raw_store["stores"].first)
   end
 
 end
