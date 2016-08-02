@@ -20,7 +20,7 @@ feature "displays store" do
       expect(page).to have_content("Denver")
       expect(page).to have_content("CO")
       expect(page).to have_content("80206")
-      expect(page).to have_content("Store Hours: Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 10-9; Sun: 11-6")
+      expect(page).to have_content("Store Hours: Mon: 10am-9pm")
     end
   end
 end

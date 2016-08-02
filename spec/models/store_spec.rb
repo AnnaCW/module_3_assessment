@@ -8,4 +8,12 @@ describe "Store" do
       expect(result.first.distance).to eq(3.25)
     end
   end
+
+  it "finds store" do
+    VCR.use_cassette("store") do
+      store = Store.find("2740")
+
+      expect(store.city).to eq("Denver")
+    end
+  end
 end
