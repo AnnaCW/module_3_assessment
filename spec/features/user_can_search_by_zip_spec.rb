@@ -10,15 +10,14 @@ feature "it searches stores by zip" do
       click_on "Search"
 
       expect(current_path).to eq("/search")
-      expect(page).to have_content("15 Total Stores")
-
-      within("li:first-child") do
-        expec(page).to have_content("Long Name:")
-        expec(page).to have_content("City:")
-        expec(page).to have_content("Distance:")
-        expec(page).to have_content("Phone:")
-        expec(page).to have_content("Store Type:")
-      end
+      expect(page).to have_content("17 Total Stores")
+      expect(page).to have_content("Showing 15 Results")
+      expect(page).to have_content("Long Name: Best Buy Mobile")
+      expect(page).to have_content("City: Denver")
+      expect(page).to have_content("Distance: 3.25")
+      expect(page).to have_content("Phone: 303-270-9189")
+      expect(page).to have_content("Store Type: Mobile")
+      
     end
   end
 end

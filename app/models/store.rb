@@ -11,4 +11,8 @@ class Store
     end
   end
 
+  def self.total_stores(zip)
+    service.get_stores(zip)["total"]
+  end
+
 end
