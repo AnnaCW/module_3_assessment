@@ -15,9 +15,7 @@ feature "it searches stores by zip" do
   end
 end
 
-# As a user
-# When I visit "/"
-# And I fill in a search box with "80202" and click "search"
+
 # Then my current path should be "/search" (ignoring params)
 # And I should see stores within 25 miles of 80202
 # And I should see a message that says "17 Total Stores"

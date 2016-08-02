@@ -5,7 +5,10 @@ class Store
   end
 
   def self.all(zip)
-    service.get_stores(zip)
+    raw_stores = service.get_stores(zip)
+    raw_stores["stores"].map do |raw_store|
+      OpenStruct.new(raw_store)
+    end
   end
 
 end
