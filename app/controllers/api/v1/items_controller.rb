@@ -2,4 +2,23 @@ class Api::V1::ItemsController < ApiBaseController
   def index
     render json: Item.all
   end
+
+  def show
+    render json: Item.find(params[:id])
+  end
+
+  def update
+    render json: Item.update(item_params)
+  end
+
+  def destroy
+    render json: Item.destroy(params[:id])
+    # render :status => 204
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :description)
+  end
 end
