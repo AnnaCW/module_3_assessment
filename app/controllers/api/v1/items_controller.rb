@@ -7,13 +7,12 @@ class Api::V1::ItemsController < ApiBaseController
     render json: Item.find(params[:id])
   end
 
-  def update
-    render json: Item.update(item_params)
+  def create
+    render json: Item.create(item_params), status: 201
   end
 
   def destroy
-    render json: Item.destroy(params[:id])
-    # render :status => 204
+    render json: Item.destroy(params[:id]), status: 204
   end
 
   private
