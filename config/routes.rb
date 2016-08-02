@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       resources :items, except: [:new, :update, :edit]
     end
   end
+
+  resources :search, only: [:index]
 end

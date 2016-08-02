@@ -2,6 +2,7 @@ require "rails_helper"
 
 feature "it searches stores by zip" do
   scenario "user sees stores" do
+    VCR.use_cassette("zip-search") do
 
     visit "/"
 
@@ -10,7 +11,7 @@ feature "it searches stores by zip" do
 
     expect(current_path).to eq("/search")
 
-    
+    end
   end
 end
 

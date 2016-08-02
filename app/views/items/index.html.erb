@@ -16,3 +16,9 @@
   <% end %>
 </div>
 
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search by zip:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+
+<% end %>
