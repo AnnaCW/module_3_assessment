@@ -12,7 +12,7 @@
 
   <% @stores.each do |store| %>
   <li>
-    Long Name: <%= store.longName %>
+    Long Name: <%= link_to store.longName, store_path(store.storeId) %>
     City: <%= store.city %>
     Distance: <%= store.distance %>
     Phone: <%= store.phone %>

@@ -15,4 +15,9 @@ class Store
     service.get_stores(zip)["total"]
   end
 
+  def self.find(id)
+    raw_store = service.get_store(id)
+    OpenStruct.new(raw_store)
+  end
+
 end

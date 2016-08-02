@@ -5,8 +5,4 @@ class SearchController < ApplicationController
     @total_stores = Store.total_stores(params[:q])
   end
 
-  def show
-    @store = Store.find(params[:id])
-  end
-
 end

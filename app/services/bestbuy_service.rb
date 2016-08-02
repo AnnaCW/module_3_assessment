@@ -9,6 +9,11 @@ class BestbuyService
     parse(response)
   end
 
+  def get_store(id)
+    response = conn.get("stores(storeId=#{id})?format=json&show=hours,storeId,storeType,longName,city,distance,phone,storeType&pageSize=15&apiKey=#{ENV['BESTBUY_API_KEY']}")
+    parse(response)
+  end
+
   private
 
   def conn

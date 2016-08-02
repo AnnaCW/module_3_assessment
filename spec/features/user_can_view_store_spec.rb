@@ -12,8 +12,8 @@ feature "displays store" do
       expect(current_path).to eq("/search")
 
       click_on("Best Buy Mobile - Cherry Creek Shopping Center")
-      expect(current_path).to eq("/stores/:store_id")
-
+      expect(current_path).to eq("/stores/2740")
+save_and_open_page
       expect(page).to have_content("Long Name: Best Buy Mobile")
       expect(page).to have_content("Store Type: Mobile")
       expect(page).to have_content("Address:")
