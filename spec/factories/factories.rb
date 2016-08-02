@@ -1,6 +1,6 @@
-FactoryGirl.define do 
-  factory :user do
-    name "Anna"
-    email "email.gmail.com"
+FactoryGirl.define do
+  factory :item do
+    name "item1"
+    description "this is an item"
   end
 end
