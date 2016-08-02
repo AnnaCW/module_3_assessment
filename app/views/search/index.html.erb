@@ -1,4 +1,19 @@
 <h1>Store Results</h1>
 
-<%= @stores.each do %>
-<% end %>
+<h3>
+  <%= @stores.count %> Total Stores
+</h3>
+
+<ul>
+
+  <% @stores.each do |store| %>
+  <li>
+    Long Name: <%= store.longName %>
+    City: <%= store.city %>
+    Distance: <%= store.distance %>
+    Phone: <%= store.phone %>
+    Store Type: <%= store.storeType %>
+  </li>
+  <% end %>
+
+</ul>

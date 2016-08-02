@@ -4,13 +4,21 @@ feature "it searches stores by zip" do
   scenario "user sees stores" do
     VCR.use_cassette("zip-search") do
 
-    visit "/"
+      visit "/"
 
-    fill_in "Search", with: "80202"
-    click_on "Search"
+      fill_in "Search", with: "80202"
+      click_on "Search"
 
-    expect(current_path).to eq("/search")
+      expect(current_path).to eq("/search")
+      expect(page).to have_content("15 Total Stores")
 
+      within("li:first-child") do
+        expec(page).to have_content("Long Name:")
+        expec(page).to have_content("City:")
+        expec(page).to have_content("Distance:")
+        expec(page).to have_content("Phone:")
+        expec(page).to have_content("Store Type:")
+      end
     end
   end
 end

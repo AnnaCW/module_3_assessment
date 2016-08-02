@@ -5,7 +5,7 @@ class BestbuyService
   end
 
   def get_stores(zip)
-    response = conn.get("stores(postalCode=#{zip}&distance=25)?format=json&show=storeId,storeType,longName,city,distance,phone,storeType&apiKey=#{ENV['BESTBUY_API_KEY']}")
+    response = conn.get("stores(area(#{zip},25))?format=json&show=storeId,storeType,longName,city,distance,phone,storeType&apiKey=#{ENV['BESTBUY_API_KEY']}")
     parse(response)
   end
 
